@@ -2,11 +2,100 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>News</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>a.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>服务器启动</display-name>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>com.lipop.web.InitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InitServlet</servlet-name>
+    <url-pattern>/init</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>首页</display-name>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>com.lipop.web.IndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/goIndex</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>新闻分类页</description>
+    <display-name>NewsServlet</display-name>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>com.lipop.web.NewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/news</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>评论发表</display-name>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>com.lipop.web.CommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/comment</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>后台登录</display-name>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <servlet-class>com.lipop.web.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>友情链接管理</display-name>
+    <servlet-name>LinkServlet</servlet-name>
+    <servlet-class>com.lipop.web.LinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LinkServlet</servlet-name>
+    <url-pattern>/link</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>FilterUtil</filter-name>
+    <filter-class>com.lipop.util.FilterUtil</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterUtil</filter-name>
+    <url-pattern>/xx/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>新闻类别管理</display-name>
+    <servlet-name>NewsTypeServlet</servlet-name>
+    <servlet-class>com.lipop.web.NewsTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsTypeServlet</servlet-name>
+    <url-pattern>/newsType</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>新闻图片上传</display-name>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <servlet-class>com.lipop.web.FileUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <url-pattern>/imageUpload</url-pattern>
+  </servlet-mapping>
 </web-app>
